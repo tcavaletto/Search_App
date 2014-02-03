@@ -32,11 +32,19 @@ public class MainActivity extends ActionBarActivity {
         final Button exitButton = (Button) findViewById(R.id.exitButton);
         final EditText textField = (EditText) findViewById(R.id.text_box);
         final TextView resultField = (TextView) findViewById(R.id.resultBox);
+        final Database_Functions theDatabase= new Database_Functions();
+
 
         //Button Methods
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                resultField.setText(search(textField.getText().toString()));
+                resultField.setText(theDatabase.search(textField.getText().toString()));
+            }
+        });
+
+        enterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                resultField.setText(theDatabase.enter(textField.getText().toString()));
             }
         });
 
