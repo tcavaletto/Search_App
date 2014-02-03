@@ -48,6 +48,11 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        enterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.exit(0);
+            }
+        });
 
     }
 
