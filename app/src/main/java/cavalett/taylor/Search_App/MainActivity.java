@@ -18,14 +18,14 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_main);
 
-        if (savedInstanceState == null) {
+        /*if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
-
+*/
         //Add objects from XML Layout
         final Button searchButton = (Button) findViewById(R.id.searchButton);
         final Button enterButton = (Button) findViewById(R.id.enterButton);
@@ -39,16 +39,18 @@ public class MainActivity extends ActionBarActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 resultField.setText(theDatabase.search(textField.getText().toString()));
+                textField.setText("");
             }
         });
 
         enterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 resultField.setText(theDatabase.enter(textField.getText().toString()));
+                textField.setText("");
             }
         });
 
-        enterButton.setOnClickListener(new View.OnClickListener() {
+        exitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.exit(0);
             }
