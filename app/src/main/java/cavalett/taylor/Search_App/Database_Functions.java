@@ -28,7 +28,8 @@ public class Database_Functions {
         textReceived=textReceived.trim();
         String[] stringsToAdd=textReceived.split("\\s+");
         for(int i=0;i<stringsToAdd.length;i++) {
-            if(stringsToAdd[i].compareTo(" ")!=0||stringsToAdd[i].compareTo("")!=0){
+            System.out.println("{"+stringsToAdd[i]+"}");
+            if((stringsToAdd[i].compareTo(" ")!=0)&&(stringsToAdd[i].compareTo("")!=0)&&(stringsToAdd[i]!=null)){
                 if(!wordExists(stringsToAdd[i])){
                     list.add(stringsToAdd[i]);
                     toReturn+=("\n Added "+ stringsToAdd[i]);
