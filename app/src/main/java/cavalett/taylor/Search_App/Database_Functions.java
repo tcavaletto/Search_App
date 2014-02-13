@@ -13,7 +13,7 @@ public class Database_Functions {
         textReceived=textReceived.trim();
         String[] toSearch=textReceived.split("\\s+");
         for(int i=0;i<toSearch.length;i++){
-            if(toSearch[i].compareTo(" ")!=0||toSearch[i]==null||toSearch[i].compareTo("")==0){
+            if((toSearch[i].compareTo(" ")!=0)&&(toSearch[i]!=null)&&(toSearch[i].compareTo("")!=0)){
                 if(wordExists(toSearch[i]))
                     toReturn+=("\n"+toSearch[i]+" exists in database");
                 else

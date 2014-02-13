@@ -13,7 +13,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_main);
 
-
         //Add objects from XML Layout
         final Button searchButton = (Button) findViewById(R.id.searchButton);
         final Button enterButton = (Button) findViewById(R.id.enterButton);
@@ -43,7 +42,5 @@ public class MainActivity extends ActionBarActivity {
                 System.exit(0);
             }
         });
-
     }
-
 }
